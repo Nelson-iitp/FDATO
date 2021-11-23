@@ -93,34 +93,6 @@ def COST(infra, workflow, solution):
                 workflow.D[i] * infra.DR[a, L[i+1]] * int(workflow.T==i))
     return c
 
-def COST_ST(infra, workflow, solution): # for stohcastic soultion
-
-    # soultion is now a prob distribution over all discrete actions
-    iLoc = int(workflow.V[0])
-    pLoc = np.zeros(infra.A)
-    pLoc[iLoc] = 1.0
-
-    L = [x for x in solution]
-    L.insert(0, pLoc)
-    L.append(pLoc)
-    c = 0
-    
-    for i in range(1, workflow.T+1):
-        a = L[i]
-
-        xc=0
-        for x in range(infra.A):
-            for y in range(infra.A):
-                xc+=(workflow.D[i-1] * L[i-1][x] * infra.DR[x, a[x]])
-        c +=   ( \
-                (workflow.D[i-1] * L[i-1] * infra.DR[0, a]) + (workflow.D[i-1] * L[i-1] * infra.DR[0, a]) + (workflow.D[i-1] * L[i-1] * infra.DR[0, a]) + \
-                workflow.D[i-1] * infra.DE[a] + \
-                workflow.V[i] * infra.VR[a] + \
-                workflow.V[i] * infra.VE[a] + \
-                workflow.D[i] * infra.DE[a] + \
-                workflow.D[i] * infra.DR[a, L[i+1]] * int(workflow.T==i) \
-                )
-    return c
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 class BASELINE:
