@@ -30,3 +30,9 @@ Computers & Industrial Engineering, Volume 156, 2021, 107224, ISSN 0360-8352,
 Abstract: The present study aimed to propose a new optimization algorithm named Flow Direction Algorithm (FDA), which is a physics-based algorithm. The FDA algorithm mimics the flow direction to the outlet point with the lowest height in a drainage basin. In other words, flow moves to neighbor with lowest high or best objective function. Thirteen classic mathematical benchmark functions, ten new mathematical benchmark functions and five engineering design problems, including three-bar truss, tension/compression spring, speed reducer, gear train, and welded beam design, with different properties are considered to evaluate the proposed algorithm. Comparing the results of the FDA with other optimization algorithms demonstrates the superior performance of the FDA in solving challenging optimization problems.
 
 Keywords: Optimization; Heuristic; Benchmark; Metaheuristic; Algorithm; Flow direction method; Mathematical benchmark functions; Engineering problem optimization
+
+___
+
+# Algorithm
+
+![algo](./algo.jpg)
